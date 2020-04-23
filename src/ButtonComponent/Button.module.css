@@ -1,4 +1,7 @@
-.Button button {
-    padding: 30px;
-    border-radius: 10px;
+.Button {
+  display: inline-block;
+  width: 80px;
+  height: 90px;
+  margin: 7px;
+  border-radius: 20px;
 }
