@@ -2,7 +2,7 @@
 
 This application functions as a simple calculator.
 
-![React Calculator App](src/assets/calculator.png) "Design of the Calculator"]
+![React Calculator App](src/assets/calculator.png 'Design of the Calculator')
 
 The functionalities include:
 
