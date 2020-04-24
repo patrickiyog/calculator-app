@@ -1,3 +1,5 @@
-.Keypad div {
-  /* Styles */
+.Keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 85px);
+  justify-items: center;
 }

@@ -26,14 +26,15 @@ const Keypad = () => {
     { value: '-', type: 'symbol' }
   ];
 
-  /*
-    Try to find a way to get the first 4 elements of the buttonValues array
-    and then put each of the 4 elements into a Button component that becomes
-    nested in a KeypadRow component. Repeat until all 20 elements in buttonValues
-    are nested in a KeypadRow component.
-  */
+  let keypad = (
+    <div className={classes.Keypad}>
+      {buttonValues.map((button, index) => {
+        return <Button key={index} value={button.value} type={button.type} />;
+      })}
+    </div>
+  );
 
-  return <div className={classes.Keypad}></div>;
+  return <div>{keypad}</div>;
 };
 
 export default Keypad;
