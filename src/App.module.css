@@ -1,8 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 .Calculator {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 20px;
     background-color: #2C2C2C;
 }

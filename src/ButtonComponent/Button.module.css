@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:500&display=swap');
-.Button {
+* {
+  box-sizing: border-box;
+}
+
+button {
   font-family: 'Rubik';
   font-size: 25px;
   text-align: center;
@@ -7,4 +11,18 @@
   height: 90px;
   margin: 2.5px;
   border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.Normal {
+  background-color: #FFFFFF;
+}
+
+.Operator {
+  background-color: #FFAF43;
 }
