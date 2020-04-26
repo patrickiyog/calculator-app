@@ -9,24 +9,37 @@ class App extends Component {
     equation: ''
   };
 
-  calculate = (button) => {
-    console.log(button);
+  click = (button) => {
+    if (button === '=') {
+      this.calculate();
+    } else if (button === 'C') {
+      this.reset();
+    } else if (button === 'DEL') {
+      this.del();
+    } else {
+      this.setState({ equation: this.state.equation + button });
+    }
+  };
+
+  calculate = () => {
+    /* eslint no-eval: 0 */
+    this.setState({ result: eval(this.state.equation) });
+    this.setState({ equation: '' });
   };
 
   reset = () => {
-    this.setState.result = '';
-    this.setState.equation = '';
+    this.setState({ result: '', equation: '' });
   };
 
   del = () => {
-    this.setState.result.slice(0, -1);
+    this.setState({ equation: this.state.equation.slice(0, -1) });
   };
 
   render() {
     return (
       <div className={classes.Calculator}>
-        <Screen result={this.state.result} />
-        <Keypad onClick={this.calculate} />
+        <Screen result={this.state.result} equation={this.state.equation} />
+        <Keypad onClick={this.click} />
       </div>
     );
   }

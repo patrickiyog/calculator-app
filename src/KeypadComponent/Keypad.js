@@ -20,7 +20,7 @@ const Keypad = (props) => {
     { value: '2', operator: false },
     { value: '3', operator: false },
     { value: '+', operator: true },
-    { value: '•', operator: false },
+    { value: '.', operator: false },
     { value: '0', operator: false },
     { value: '=', operator: true },
     { value: '-', operator: true }
@@ -29,10 +29,21 @@ const Keypad = (props) => {
   let keypad = (
     <div className={classes.Keypad}>
       {buttonValues.map((button, index) => {
+        let btnValue = '';
+
+        if (button.value === 'x') {
+          btnValue = '*';
+        } else if (button.value === '÷') {
+          btnValue = '/';
+        } else {
+          btnValue = button.value;
+        }
+
         return (
           <Button
             key={index}
-            value={button.value}
+            value={btnValue}
+            symbol={button.value}
             operator={button.operator}
             onClick={props.onClick}
           />

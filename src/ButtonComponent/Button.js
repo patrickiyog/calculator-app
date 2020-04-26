@@ -13,10 +13,10 @@ const Button = (props) => {
   return (
     <button
       className={btnClass}
-      name={props.value}
-      onClick={(event) => props.onClick(event.target.name)}
+      value={props.value}
+      onClick={(event) => props.onClick(event.target.value)}
     >
-      {props.value}
+      {props.symbol}
     </button>
   );
 };
