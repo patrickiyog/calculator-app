@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import classes from './App.module.css';
 import Screen from './ScreenComponent/Screen';
 import Keypad from './KeypadComponent/Keypad';
+import { create, all } from 'mathjs';
+
+const config = {};
+const math = create(all, config);
 
 class App extends Component {
   state = {
@@ -23,8 +27,12 @@ class App extends Component {
 
   calculate = () => {
     /* eslint no-eval: 0 */
-    this.setState({ result: eval(this.state.equation) });
-    this.setState({ equation: '' });
+    try {
+      this.setState({ result: math.eval(this.state.equation) });
+      this.setState({ equation: '' });
+    } catch (error) {
+      this.setState({ result: 'Error' });
+    }
   };
 
   reset = () => {
