@@ -2,12 +2,12 @@ import React from 'react';
 import Button from '../ButtonComponent/Button';
 import classes from './Keypad.module.css';
 
-const Keypad = () => {
+const Keypad = (props) => {
   const buttonValues = [
-    { value: ')', operator: false },
     { value: '(', operator: false },
-    { value: 'CE', operator: false },
+    { value: ')', operator: false },
     { value: 'C', operator: false },
+    { value: 'DEL', operator: false },
     { value: '7', operator: false },
     { value: '8', operator: false },
     { value: '9', operator: false },
@@ -30,7 +30,12 @@ const Keypad = () => {
     <div className={classes.Keypad}>
       {buttonValues.map((button, index) => {
         return (
-          <Button key={index} value={button.value} operator={button.operator} />
+          <Button
+            key={index}
+            value={button.value}
+            operator={button.operator}
+            onClick={props.onClick}
+          />
         );
       })}
     </div>

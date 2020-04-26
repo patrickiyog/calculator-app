@@ -10,7 +10,15 @@ const Button = (props) => {
     btnClass = classes.Normal;
   }
 
-  return <button className={btnClass}>{props.value}</button>;
+  return (
+    <button
+      className={btnClass}
+      name={props.value}
+      onClick={(event) => props.onClick(event.target.name)}
+    >
+      {props.value}
+    </button>
+  );
 };
 
 export default Button;

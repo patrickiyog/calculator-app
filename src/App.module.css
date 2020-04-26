@@ -1,10 +1,11 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .Calculator {
-    display: inline-block;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #2C2C2C;
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  background-color: #2c2c2c;
 }

@@ -4,11 +4,29 @@ import Screen from './ScreenComponent/Screen';
 import Keypad from './KeypadComponent/Keypad';
 
 class App extends Component {
+  state = {
+    result: '',
+    equation: ''
+  };
+
+  calculate = (button) => {
+    console.log(button);
+  };
+
+  reset = () => {
+    this.setState.result = '';
+    this.setState.equation = '';
+  };
+
+  del = () => {
+    this.setState.result.slice(0, -1);
+  };
+
   render() {
     return (
       <div className={classes.Calculator}>
-        <Screen />
-        <Keypad />
+        <Screen result={this.state.result} />
+        <Keypad onClick={this.calculate} />
       </div>
     );
   }
